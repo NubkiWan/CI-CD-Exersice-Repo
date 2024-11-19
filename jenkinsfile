@@ -23,12 +23,11 @@ pipeline {
                 bat 'npm test'
             }
         }
+    }
 
     post{
         always{
             echo "CI pipeline completed"
         }
-    }
-            
     }
 }
