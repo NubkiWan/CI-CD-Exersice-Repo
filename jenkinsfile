@@ -8,25 +8,25 @@ pipeline {
             }
         }
 
-    stage ("Install dependencies"){
-        steps{
-            script{
-                bat 'npm install'
+        stage ("Install dependencies"){
+            steps{
+                script{
+                    bat 'npm install'
+                    }
                 }
-            }
-    }
+        }
 
-    stage("Start application and run tests"){
+        stage("Start application and run tests"){
                 bat 'npm start'
                 bat 'wait-on http://localhost:8081'
                 bat 'npm test'
-    }
-
-    post{
-        always{
-            echo "CI pipeline completed"
-              }
         }
-         
+
+        post{
+            always{
+                echo "CI pipeline completed"
+                }
+            }
+            
     }
 }
