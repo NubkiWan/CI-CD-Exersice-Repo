@@ -24,11 +24,11 @@ pipeline {
             }
         }
 
-        post{
-            always{
-                echo "CI pipeline completed"
-                }
-            }
+    post{
+        always{
+            echo "CI pipeline completed"
+        }
+    }
             
     }
 }
